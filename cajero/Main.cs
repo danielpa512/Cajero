@@ -6,7 +6,7 @@ namespace ATM
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bienvenido al Cajero Automático");
+            Console.WriteLine("Bienvenido al Cajero Automáticos");
             // Aquí se agregará la lógica del cajero automático
         }
     }
