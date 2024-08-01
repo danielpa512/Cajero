@@ -10,7 +10,7 @@ namespace cajero
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Console.WriteLine("Hola");
         }
     }
 }
