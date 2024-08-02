@@ -14,9 +14,38 @@ namespace ATM
         }
     }
 
+    // Clase Cuenta para manejar el saldo y depósitos
+    class Cuenta
+    {
+        private decimal saldo;
+
+        public Cuenta(decimal saldoInicial)
+        {
+            saldo = saldoInicial;
+        }
+
+        public void Depositar(decimal cantidad)
+        {
+            saldo += cantidad;
+            Console.WriteLine($"Has depositado {cantidad:C}. Tu saldo actual es {saldo:C}.");
+        }
+
+        public decimal ObtenerSaldo()
+        {
+            return saldo;
+        }
+    }
+
     // Clase CajeroAutomatico para manejar las operaciones
     class CajeroAutomatico
     {
+        private Cuenta cuenta;
+
+        public CajeroAutomatico(Cuenta cuenta)
+        {
+            this.cuenta = cuenta;
+        }
+
         public void MostrarMensajeBienvenida()
         {
             Console.WriteLine("Bienvenido al Cajero Automático");
@@ -26,8 +55,7 @@ namespace ATM
         {
             Console.Write("Ingrese la cantidad a depositar: ");
             decimal cantidad = Convert.ToDecimal(Console.ReadLine());
-            // Aquí se debe agregar la lógica para verificar y procesar el depósito
-            Console.WriteLine($"Has depositado {cantidad:C}.");
+            cuenta.Depositar(cantidad);
         }
     }
 
@@ -36,7 +64,8 @@ namespace ATM
     {
         static void Main(string[] args)
         {
-            CajeroAutomatico cajero = new CajeroAutomatico();
+            Cuenta cuenta = new Cuenta(1000.00m);
+            CajeroAutomatico cajero = new CajeroAutomatico(cuenta);
             Usuario usuario = new Usuario();
 
             cajero.MostrarMensajeBienvenida();
