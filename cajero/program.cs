@@ -15,7 +15,7 @@ namespace ATM
         public void Ejecutar()
         {
             // Aquí se agregará la lógica del cajero automático
-            Console.WriteLine("Aquí se agregará la lógica del cajero automático.");
+            Console.WriteLine("Aquí se agregará la lógica del cajero automático..");
         }
     }
 
